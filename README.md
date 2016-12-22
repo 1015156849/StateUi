@@ -98,6 +98,9 @@
                     add(R.id.Button);
                 }});
 ```		
+附上图片一枚
+
+![demo.gif](https://raw.githubusercontent.com/1015156849/StateUi/master/demo.gif)
 
 ##后言<br>
   具体使用方法就如上，如果你还有不太明白的话，可以下载项目查看demo和源码
