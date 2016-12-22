@@ -31,42 +31,48 @@
 	
 推荐你去继承一个 StateUi 类，这个类默认有一个 
 
+```java
 	public static final int ShowDatasView = 0; 
-你将你所有自定义的状态布局的layout放在这里，例如：
+```
 	
+你将你所有自定义的状态布局的layout放在这里，例如：
+
+```java	
 	public class myStateUi extends StateUi {
 
 	    /**默认有一个ShowDatasView 该初始值为0*/
 	    public static final int LoadView= R.layout.state_ui_load;
 	    public static final int NoNetView= R.layout.state_ui_no_net;
 	}
+```
 	
 在使用的时候，你只需要给需要显示的容器设置一个id，然后调用 
 
+```java
 	ShowStateUi(位置容器的id,想显示的StateUi布局);
-	
+```
 例如：	
-
+```java
 	/**显示StateUi（注：该方法中默认先执行了 一次 HideStateUi()）*/
 	ShowStateUi(R.id.containerView, myStateUi.LoadView);
-	
+```
 ####注意：位置容器只能为 布局，不可以是Button等控件
 
 ###隐藏状态布局
-	
+```java
 	HideStateUi();
-	
+```
 或者
-	
+```java
 	ShowStateUi(位置容器的id,StateUi中的ShowDatasView);
-
+```
 ##如果我想给自定义布局设置一些的控件设置监听怎么办？
   你可以通过 
-
+```java
 		setOnClick(StateUi布局,点击监听,想要设置监听的控件id的List集合);
-
+```
   例如：
-	
+```java	
 	          /**设置点击事件 （注：必须使用ShowStateUi()显示 该状态布局 后才能对该布局上的控件设置监听）*/
                 setOnClick(myStateUi.NoNetView, new View.OnClickListener() {
                     @Override
@@ -91,7 +97,7 @@
                     add(R.id.NoNetView);
                     add(R.id.Button);
                 }});
-		
+```		
 
 ##后言<br>
   具体使用方法就如上，如果你还有不太明白的话，可以下载项目查看demo和源码
